@@ -9,6 +9,7 @@ const pool = require("../utils/db");
 
 exports.loginController = async (req, res) => {
   const { email, password } = req.body;
+  console.log(email, password);
 
   try {
     const [users] = await pool.query("SELECT * FROM users WHERE email = ? ", [
